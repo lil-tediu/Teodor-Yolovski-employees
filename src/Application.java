@@ -14,7 +14,7 @@ public class Application {
 	static Set<Employee> employees = new HashSet<Employee>();
 	
 	//No get method in Set 
-	private static Employee getEqual(Employee e, Set<Employee> set) {
+	public static Employee getEqual(Employee e, Set<Employee> set) {
 		for (Iterator<Employee> it = set.iterator(); it.hasNext(); ) {
 			Employee emp = it.next();
 			if (emp.equals(e)) {
@@ -65,8 +65,7 @@ public class Application {
 			}
 		}
 		return result;
-	}
-	
+}
 	
 	public static long getDifferenceDays(Date d1, Date d2) {
 	    long diff = d2.getTime() - d1.getTime();
@@ -128,6 +127,8 @@ public class Application {
 			for (Employee e : result) {
 				System.out.print(e.getId() + " ");
 			}
+			System.out.println();
+			System.out.println("They had been working for: " + getMostWorkingDaysByTwoEmployees() + " days");
 			scanner.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("Couldn't load, the file was not found!");
